@@ -21,6 +21,7 @@ const Quiz = ({navigation}) => {
   const [ques, setques] = useState(0);
   const [options, setOptions] = useState([]);
   const [score, setscore] = useState(0);
+  const [totalCorrectAnswers, setTotalCorrectAnswers] = useState(0);
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -62,6 +63,7 @@ const Quiz = ({navigation}) => {
   const handleSelectOption = _option => {
     if (_option === question[ques].correct_answer) {
       setscore(score + 10);
+      setTotalCorrectAnswers(totalCorrectAnswers + 1); // Update totalCorrectAnswers
     }
     if (ques !== 29) {
       setques(ques + 1);
@@ -77,6 +79,7 @@ const Quiz = ({navigation}) => {
   const handleShowResult = () => {
     navigation.navigate('Result', {
       score: score,
+      totalCorrectAnswers: totalCorrectAnswers,
     });
   };
 

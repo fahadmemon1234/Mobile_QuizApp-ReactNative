@@ -15,9 +15,10 @@ export default Title;
 
 const styles = StyleSheet.create({
   title: {
-    fontSize: 36,
+    fontSize: 25,
     color: 'black',
-    fontWeight: '600',
+    fontWeight: '700',
+    color: '#30d2c1',
   },
   container: {
     alignItems: 'center',
