@@ -113,10 +113,10 @@ const Quiz = ({navigation}) => {
                   underlayColor="#37eabb" // Set the underlay color for the "hover" effect
                 >
                   <Text style={styles.option}>
-                    <TouchableOpacity style={styles.btnoptions}>
+                    <View style={styles.btnoptions}>
                       <Text style={styles.optionNum}>01</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.optionclick}>
+                    </View>
+                    <View style={styles.optionclick}>
                       <Text
                         style={{
                           color: isHovered1 ? '#20164f' : 'white',
@@ -125,7 +125,7 @@ const Quiz = ({navigation}) => {
                         }}>
                         {decodeURIComponent(options[0])}
                       </Text>
-                    </TouchableOpacity>
+                    </View>
                   </Text>
                 </TouchableHighlight>
 
@@ -136,10 +136,10 @@ const Quiz = ({navigation}) => {
                   onPress={() => handleSelectOption(options[1])}
                   underlayColor="#37eabb">
                   <Text style={styles.option}>
-                    <TouchableOpacity style={styles.btnoptions}>
+                    <View style={styles.btnoptions}>
                       <Text style={styles.optionNum}>02</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.optionclick}>
+                    </View>
+                    <View style={styles.optionclick}>
                       <Text
                         style={{
                           color: isHovered2 ? '#20164f' : 'white',
@@ -148,7 +148,7 @@ const Quiz = ({navigation}) => {
                         }}>
                         {decodeURIComponent(options[1])}
                       </Text>
-                    </TouchableOpacity>
+                    </View>
                   </Text>
                 </TouchableHighlight>
 
@@ -159,10 +159,10 @@ const Quiz = ({navigation}) => {
                   onPress={() => handleSelectOption(options[2])}
                   underlayColor="#37eabb">
                   <Text style={styles.option}>
-                    <TouchableOpacity style={styles.btnoptions}>
+                    <View style={styles.btnoptions}>
                       <Text style={styles.optionNum}>03</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.optionclick}>
+                    </View>
+                    <View style={styles.optionclick}>
                       <Text
                         style={{
                           color: isHovered3 ? '#20164f' : 'white',
@@ -171,7 +171,7 @@ const Quiz = ({navigation}) => {
                         }}>
                         {decodeURIComponent(options[2])}
                       </Text>
-                    </TouchableOpacity>
+                    </View>
                   </Text>
                 </TouchableHighlight>
 
@@ -182,10 +182,10 @@ const Quiz = ({navigation}) => {
                   onPress={() => handleSelectOption(options[3])}
                   underlayColor="#37eabb">
                   <Text style={styles.option}>
-                    <TouchableOpacity style={styles.btnoptions}>
+                    <View style={styles.btnoptions}>
                       <Text style={styles.optionNum}>04</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.optionclick}>
+                    </View>
+                    <View style={styles.optionclick}>
                       <Text
                         style={{
                           color: isHovered4 ? '#20164f' : 'white',
@@ -194,7 +194,7 @@ const Quiz = ({navigation}) => {
                         }}>
                         {decodeURIComponent(options[3])}
                       </Text>
-                    </TouchableOpacity>
+                    </View>
                   </Text>
                 </TouchableHighlight>
               </View>
