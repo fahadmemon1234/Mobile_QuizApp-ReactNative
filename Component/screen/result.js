@@ -2,6 +2,7 @@ import React from 'react';
 import {Image, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import Title from '../title';
 import LinearGradient from 'react-native-linear-gradient';
+import Icon from 'react-native-vector-icons/FontAwesome5';
 
 const Result = ({navigation, route}) => {
   const {score} = route.params;
@@ -13,7 +14,9 @@ const Result = ({navigation, route}) => {
         <Title titleText="Results" />
 
         <Text style={styles.TotalText}>Total correct answers</Text>
-        <Text style={styles.TotalCorrect}>{totalCorrectAnswers} out of 30 Questions</Text>
+        <Text style={styles.TotalCorrect}>
+          {totalCorrectAnswers} out of 30 Questions
+        </Text>
 
         <View style={styles.bannerContainer}>
           <LinearGradient
@@ -35,7 +38,15 @@ const Result = ({navigation, route}) => {
         <TouchableOpacity
           onPress={() => navigation.navigate('Home')}
           style={styles.button}>
-          <Text style={styles.buttonText}>Go To Home</Text>
+          <Text style={[styles.buttonText, { alignSelf: 'center' }]}>
+            <Icon
+              name="sync-alt"
+              size={20}
+              style={{color: 'white', marginRight: 5}}
+            />
+            <Text>  </Text>
+            <Text style={{marginLeft: 5}}>Try Again</Text>
+          </Text>
         </TouchableOpacity>
       </View>
     </>
@@ -71,9 +82,10 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   buttonText: {
-    fontSize: 24,
+    fontSize: 23,
     fontWeight: '600',
     color: 'white',
+    justifyContent:'space-between',
   },
   ScoreValue: {
     color: 'white',
@@ -95,7 +107,7 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     paddingTop: 7,
     color: '#30d2c1',
-    paddingBottom:65,
+    paddingBottom: 65,
   },
 
   gradientContainer: {

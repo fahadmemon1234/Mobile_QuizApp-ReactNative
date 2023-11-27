@@ -15,7 +15,7 @@ export default Title;
 
 const styles = StyleSheet.create({
   title: {
-    fontSize: 25,
+    fontSize: 50,
     color: 'black',
     fontWeight: '700',
     color: '#30d2c1',
