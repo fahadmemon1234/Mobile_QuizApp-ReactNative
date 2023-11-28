@@ -25,6 +25,9 @@ const Quiz = ({navigation}) => {
 
   const [isLoading, setIsLoading] = useState(false);
 
+  
+  
+
   const getQuiz = async () => {
     setIsLoading(true);
     const url =

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {
   Image,
   SafeAreaView,
@@ -6,11 +6,27 @@ import {
   Text,
   TouchableOpacity,
   View,
+  BackHandler,
 } from 'react-native';
 import Title from '../title';
 import LinearGradient from 'react-native-linear-gradient';
 
 const Home = ({navigation}) => {
+  const handleExit = () => {
+    BackHandler.exitApp();
+  };
+
+  useEffect(() => {
+    // Set up the event listener for the hardware back button
+    const backHandler = BackHandler.addEventListener(
+      'hardwareBackPress',
+      handleExit,
+    );
+
+    // Clean up the event listener when the component is unmounted
+    return () => backHandler.remove();
+  }, []);
+
   return (
     <>
       <View style={styles.Container}>
@@ -27,22 +43,25 @@ const Home = ({navigation}) => {
             </View>
           </View>
 
-          <View style={{marginTop:-15, alignItems:'center'}}>
+          <View style={{marginTop: -15, alignItems: 'center'}}>
             <Text style={styles.TextPlay}>Let's Play!</Text>
             <Text style={styles.TextNow}>Play now and Level up</Text>
           </View>
         </View>
 
-        <TouchableOpacity
-          onPress={() => navigation.navigate('Quiz')}
-          style={styles.button}>
-          <Text style={styles.buttonText}>Start</Text>
-        </TouchableOpacity>
+      
+          <TouchableOpacity
+            onPress={() => navigation.navigate('Quiz')}
+            style={styles.button}>
+            <Text style={styles.buttonText}>Start</Text>
+          </TouchableOpacity>
 
-        <TouchableOpacity
-          style={styles.buttonsCloseText}>
-          <Text style={styles.buttonClose}>Close</Text>
-        </TouchableOpacity>
+          <TouchableOpacity
+            onPress={handleExit}
+            style={styles.buttonsCloseText}>
+            <Text style={styles.buttonClose}>Exit</Text>
+          </TouchableOpacity>
+        
       </View>
     </>
   );
@@ -73,6 +92,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     alignItems: 'center',
     height: '100%',
+    flex:1,
     backgroundColor: '#20164f',
     justifyContent: 'space-between',
   },
@@ -83,17 +103,19 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     alignItems: 'center',
     marginBottom: -110,
+    justifyContent: 'center',
+    alignSelf: 'center',
   },
-  buttonsCloseText:{
+  buttonsCloseText: {
     width: '90%',
     borderWidth: 2,
-    borderColor:'#7554fe',
-    alignItems:'center',
+    borderColor: '#7554fe',
+    alignItems: 'center',
     padding: 16,
     borderRadius: 16,
     marginBottom: 30,
   },
-  buttonClose:{
+  buttonClose: {
     fontSize: 23,
     fontWeight: '600',
     color: '#7554fe',
