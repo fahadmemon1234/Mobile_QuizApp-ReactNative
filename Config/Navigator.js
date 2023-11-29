@@ -5,6 +5,7 @@ import Home from '../Component/screen/Home';
 import Quiz from '../Component/screen/quiz';
 import Result from '../Component/screen/result';
 
+
 const Stack = createNativeStackNavigator();
 
 const AppNavigator = () => {
