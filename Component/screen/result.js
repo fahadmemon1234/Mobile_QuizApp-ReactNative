@@ -15,7 +15,7 @@ const Result = ({navigation, route}) => {
 
         <Text style={styles.TotalText}>Total correct answers</Text>
         <Text style={styles.TotalCorrect}>
-          {totalCorrectAnswers} out of 30 Questions
+          {totalCorrectAnswers} out of 20 Questions
         </Text>
 
         <View style={styles.bannerContainer}>

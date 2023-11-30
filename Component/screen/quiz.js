@@ -42,7 +42,7 @@ const Quiz = ({navigation}) => {
       // Set options directly from the next question's data
       setOptions(questions[nextQuestionIndex].incorrect_answers);
     }
-    if (ques == 9) {
+    if (ques == 19) {
       handleShowResult();
     }
   };
@@ -130,13 +130,15 @@ const Quiz = ({navigation}) => {
   return (
     <>
       <View style={styles.container}>
-        {/* <View>
+      {/* {isLoading && (
+        <View>
             <Gif
               source={require('../../Assets/Img/loader.gif')}
               style={styles.Loaderimg}
               resizeMode="contain"
             />
-          </View> */}
+          </View>
+          )} */}
 
         <View style={styles.parent}>
           <View style={styles.top}>
@@ -245,7 +247,7 @@ const Quiz = ({navigation}) => {
           </View>
 
           <View style={styles.bottom}>
-            {ques === 9 && (
+            {ques === 19 && (
               <TouchableOpacity
                 style={styles.button}
                 onPress={handleShowResult}>
